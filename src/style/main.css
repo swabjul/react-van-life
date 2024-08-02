@@ -53,7 +53,7 @@ footer > p {
 
 .home-page--container {
   min-height: calc(100dvh - 175px);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)), url("./images/home-hero.png") no-repeat center 15%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)), url("../images/home-hero.png") no-repeat center 15%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
