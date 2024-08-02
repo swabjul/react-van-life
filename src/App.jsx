@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
-import About from "./pages/About"
 import Home from "./pages/Home"
+import About from "./pages/About"
+import Vans from "./pages/Vans"
+import VanDetails from "./pages/VanDetails"
 
 export default function App() {
   return (
@@ -16,6 +18,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/about" element={<About />}/>
+        <Route path="/vans" element={<Vans />}/>
+        <Route path="/vans/:id" element={<VanDetails />}/>
       </Routes>
       <footer>
         <p>Ⓒ 2022 #VANLIFE</p>

@@ -6,6 +6,7 @@
 
 body {
   font-family: "Inter";
+  background-color: #FFF7ED;
 }
 
 header {
@@ -14,6 +15,7 @@ header {
   display: flex;
   align-items: center;
   padding-inline: 26px;
+  box-shadow: 0 4px 2px -2px #dedede;
 }
 
 .header--logo {
@@ -140,4 +142,184 @@ footer > p {
   font-size: 1rem;
   font-weight: 700;
   text-decoration: none;
+}
+
+.vans-page--container {
+  padding: 55px 26px;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.vans--title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #161616;
+  margin-bottom: 23px;
+}
+
+.vans--list {
+  display: flex;
+  gap: 34px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.vans--tile, .vans--tile > a{
+    max-width: 500px;
+    text-decoration: none;
+    opacity: 1;
+    transition: opacity 0.3s ease; /* Optional: smooth transition */
+}
+
+.vans--tile > a:focus {
+  outline: none;
+}
+
+.vans--tile:hover {
+  opacity: 1; /* Full opacity for the hovered element */
+}
+
+.vans--list:hover .vans--tile > a:not(:hover){
+  opacity: 0.7; /* Reduced opacity for non-hovered siblings */
+}
+
+
+
+
+
+/* .vans--tile:hover ~ .vans--tile,
+.vans--tile:not(:hover) {
+  opacity: 0.7;
+} */
+
+.vans--tile img{
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.vans--info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.vans--name, .vans--price {
+  font-weight: 600;
+  font-size: calc(20rem / 16);
+  color: #161616;
+}
+
+.vans--price span {
+  font-family: Avenir Next;
+  font-size: calc(14rem / 16);
+  font-weight: 500;
+  color: #161616;
+}
+
+.vans--type {
+  width: 85px;
+  height: 34px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #FFEAD0;
+  font-style: normal;
+}
+
+.vans--type.simple{
+  background-color: #E17654;
+}
+
+.vans--type.rugged{
+  background-color: #115E59;
+}
+
+.vans--type.luxury{
+  background-color: #161616;
+}
+
+.van-details--container {
+  max-width: 1200px;
+  padding: 55px 26px;
+  margin-inline: auto;
+}
+
+.van-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.van-details img{
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5px;
+}
+
+.van-details .vans--type {
+  margin-bottom: 20px;
+}
+
+.van-details--name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #161616;
+  margin-bottom: 10px;
+}
+
+.van-details--price {
+  font-size: calc(24rem / 16);
+  font-weight: 700;
+  color: #161616;
+  margin-bottom: 10px;
+}
+.van-details--price span{
+  font-size: calc(20rem / 16);
+  font-weight: 500;
+  color: #161616;
+}
+
+.van-details--description {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #161616;
+  margin-bottom: 20px;
+}
+
+.van-details .link-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 495px;
+  height: 50px;
+  border-radius: 5px;
+  font-size: calc(18rem / 16);
+  font-weight: 700;
+  color: #fff;
+  background: #FF8C38;
+  text-decoration: none;
+}
+
+.arrow-back {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #201F1D;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+.arrow-back::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  display: block;
+  background: url('data:image/svg+xml,<svg fill="%23858585" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 400.004 400.004" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><g><path d="M382.688,182.686H59.116l77.209-77.214c6.764-6.76,6.764-17.726,0-24.485c-6.764-6.764-17.73-6.764-24.484,0L5.073,187.757 c-6.764,6.76-6.764,17.727,0,24.485l106.768,106.775c3.381,3.383,7.812,5.072,12.242,5.072c4.43,0,8.861-1.689,12.242-5.072 c6.764-6.76,6.764-17.726,0-24.484l-77.209-77.218h323.572c9.562,0,17.316-7.753,17.316-17.315 C400.004,190.438,392.251,182.686,382.688,182.686z"></path></g></g></svg>') no-repeat center;
 }
