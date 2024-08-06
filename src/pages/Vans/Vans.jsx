@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import "../api/server.js"
+import "../../api/server.js"
 
 export default function Vans() {
 
@@ -21,10 +21,7 @@ export default function Vans() {
           <img className="vans--image" src={van.imageUrl} alt={`Image of ${van.name}`} />
           <div className="vans--info">
             <h2 className="vans--name">{van.name}</h2>
-            <p className="vans--price">
-              {van.price}
-              <span>/day</span>
-            </p>
+            <p className="vans--price">${van.price}<span>/day</span></p>
           </div>
           <i className={`vans--type ${van.type}`}>{type}</i>
         </Link>
