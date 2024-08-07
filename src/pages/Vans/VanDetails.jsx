@@ -3,8 +3,7 @@ import { useParams, Link } from "react-router-dom"
 
 export default function VanDetails() {
   const params = useParams()
-  console.log(params)
-
+  
   const [van, setVan] = useState(null)
 
   useEffect(() => {
@@ -13,7 +12,6 @@ export default function VanDetails() {
       .then(data => setVan(data.vans))
   }, [params])
 
-  console.log(van)
 
   return (
     van ? (
