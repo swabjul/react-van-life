@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
+import { Link, useSearchParams } from "react-router-dom"
 import "../../api/server.js"
 
 export default function Vans() {
+
+  const [searchParams, setSearchParams] = useSearchParams()
+  const typeFilter = searchParams.get("type")
 
   const [vans, setVans] = useState([])
 
@@ -12,8 +15,11 @@ export default function Vans() {
       .then(data => setVans(data.vans))
   },[])
 
+  const displayedVans = typeFilter
+    ? vans.filter( van => van.type === typeFilter)
+    : vans
 
-  const vansElements = vans.map(van => {
+  const vansElements = displayedVans.map(van => {
     const  type = van.type.charAt(0).toUpperCase() + van.type.slice(1)
     return (
       <div key={van.id} className="vans--tile">
@@ -31,9 +37,54 @@ export default function Vans() {
 
   })
 
+  function generateSearchParams(key, value) {
+    const sp = new URLSearchParams(searchParams)
+
+    if (value === null) {
+      sp.delete(key)
+    } else {
+      sp.set(key, value)
+    }
+
+    return `?${sp.toString()}`
+  }
+
+
   return (
     <div className="vans-page--container">
       <h1 className="vans--title">Explore our van options</h1>
+      <div className="van-page--filter-buttons">
+        <Link 
+          className={`filter-btn simple ${typeFilter === "simple" ? "selected" : null}`}
+          to={generateSearchParams("type", "simple")}
+        >
+          Simple
+        </Link>
+        <Link
+          className={`filter-btn luxury ${typeFilter === "luxury" ? "selected" : null}`}
+          to={generateSearchParams("type", "luxury")}
+        >
+          Luxury
+        </Link>
+        <Link
+          className={`filter-btn rugged ${typeFilter === "rugged" ? "selected" : null}`}
+          to={generateSearchParams("type", "rugged")}
+        >
+          Rugged
+        </Link>
+        { typeFilter ? (
+            <Link
+              className="clear-btn"
+              to={generateSearchParams("type", null)}
+            >
+              Clear filters
+            </Link>
+          ) : nullg
+        }
+      </div>
+
+
+
       <div className="vans--list">
         {vansElements}
       </div>

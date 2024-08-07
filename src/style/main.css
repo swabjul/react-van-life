@@ -502,3 +502,54 @@ footer > p {
   width: 105px;
   border-radius: 5px;
 }
+
+.van-page--filter-buttons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 55px;
+}
+
+.van-page--filter-buttons .filter-btn {
+  width: 104px;
+  height: 37px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFEAD0;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #4D4D4D;
+  text-decoration: none;
+}
+
+.van-page--filter-buttons .clear-btn {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #4D4D4D;
+  border-bottom: 1px solid transparent;
+  text-decoration: none;
+}
+
+.van-page--filter-buttons .filter-btn.simple:hover,
+.van-page--filter-buttons .filter-btn.simple.selected{
+  background: #E17654;
+  color: #FFEAD0;
+}
+
+.van-page--filter-buttons .filter-btn.luxury:hover,
+.van-page--filter-buttons .filter-btn.luxury.selected {
+  background: #161616;
+  color: #FFEAD0;
+}
+
+.van-page--filter-buttons .filter-btn.rugged:hover,
+.van-page--filter-buttons .filter-btn.rugged.selected {
+  background: #115E59;
+  color: #FFEAD0;
+}
+
+.van-page--filter-buttons .clear-btn:hover {
+  border-bottom: 1px solid #4D4D4D;
+}
